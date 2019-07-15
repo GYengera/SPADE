@@ -65,7 +65,7 @@ class Pix2pixDataset(BaseDataset):
 
         # input image (real images)
         image_path = self.image_paths[index]
-        if not opt.no_pairing_check:
+        if not self.opt.no_pairing_check:
 	        assert self.paths_match(label_path, image_path), \
     	        "The label_path %s and image_path %s don't match." % \
         	    (label_path, image_path)
