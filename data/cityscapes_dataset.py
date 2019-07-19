@@ -28,14 +28,12 @@ class CityscapesDataset(Pix2pixDataset):
         root = opt.dataroot
         phase = 'val' if opt.phase == 'test' else 'train'
 
-        # label_dir = os.path.join(root, 'gtFine', phase)
-        label_dir = os.path.join(root, phase + 'B')
+        label_dir = os.path.join(root, 'gtFine', phase)
         label_paths_all = make_dataset(label_dir, recursive=True)
-        # label_paths = [p for p in label_paths_all if p.endswith('_labelIds.png')]
-        label_paths = [p for p in label_paths_all if p.endswith('.jpg')]
+        label_paths = [p for p in label_paths_all if p.endswith('_labelIds.png')]
+        # label_paths = [p for p in label_paths_all if p.endswith('.jpg')]
 
-        # image_dir = os.path.join(root, 'leftImg8bit', phase)
-        image_dir = os.path.join(root, phase+'A')
+        image_dir = os.path.join(root, 'leftImg8bit', phase)
         image_paths = make_dataset(image_dir, recursive=True)
 
         if not opt.no_instance:
