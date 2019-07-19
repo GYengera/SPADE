@@ -22,7 +22,8 @@ def get_nonspade_norm_layer(opt, norm_type='instance'):
 
     # this function will be returned
     def add_norm_layer(layer):
-        nonlocal norm_type
+        # nonlocal norm_type
+        norm_type = 'spectralinstance'
         if norm_type.startswith('spectral'):
             layer = spectral_norm(layer)
             subnorm_type = norm_type[len('spectral'):]
