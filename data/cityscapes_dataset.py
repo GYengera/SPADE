@@ -34,7 +34,7 @@ class CityscapesDataset(Pix2pixDataset):
         # label_paths = [p for p in label_paths_all if p.endswith('.jpg')]
 
         # image_dir = os.path.join(root, 'leftImg8bit', phase)
-        image_dir = os.path.join(root, 'data/cityscapes_sketches_2')
+        image_dir = os.path.join(root, 'data/cityscapes_val_sketches')
         image_paths = make_dataset(image_dir, recursive=True)
 
         if not opt.no_instance:
